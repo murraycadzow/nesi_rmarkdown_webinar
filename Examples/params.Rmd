@@ -1,0 +1,29 @@
+---
+title: "Parameter Example"
+author: "Murray Cadzow"
+date: "15/04/2020"
+output: html_document
+params:
+  name: Murray Cadzow
+  csv_file: "example1.csv"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+An example of how to pass through parameters at knitting
+
+This report is written for `r params$name`
+
+The data for this report is stored in `r params$csv_file`
+
+```{r, message = FALSE}
+data <- read_csv(file = params$csv_file)
+```
+
+```{r}
+knitr::kable(data)
+```
+

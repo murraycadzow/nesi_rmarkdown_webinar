@@ -1,0 +1,4 @@
+Observation,Length_mm,Condition
+obs1,23,case
+obs2,45,control
+obs3,67,control
