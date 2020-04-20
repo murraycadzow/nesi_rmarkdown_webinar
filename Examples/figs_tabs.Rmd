@@ -1,0 +1,56 @@
+---
+title: "Figures and Tables example"
+author: "Murray Cadzow"
+date: "15/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+data(mtcars)
+```
+
+## Creating a table
+
+### Using knitr::kable
+
+```{r cars }
+# table of the first 6 rows of mtcars dataset
+knitr::kable(head(mtcars), caption = "Table Caption")
+```
+
+### Using Markdown
+
+col1 | col2 | col3
+---|---|---
+a | 1 | val1
+b | 2 | val2
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Creating a chunk to use later
+
+```{r calcchunk, echo = FALSE, results = 'hide'}
+1 + 3
+```
+
+
+
+## using a chunk later
+```{r resultchunk, ref.label='calcchunk'}
+```
+
+And you could repeat a plot
+```{r repeatplot, ref.label = 'pressure'}
+```
+
+
